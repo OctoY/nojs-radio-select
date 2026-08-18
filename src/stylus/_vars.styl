@@ -1,0 +1,62 @@
+$themeClass ?= ()
+
+$select-width ?= 200px
+$select-paddingTop ?= .25em
+$select-paddingRight ?= .5em
+$select-paddingBottom ?= .25em
+$select-paddingLeft ?= 1em
+$select-bgColor ?= #c0ffee
+$select-color ?= rebeccapurple
+$select-fontSize ?= 1.5rem
+$select-fontFamily ?= 'Noto Sans', sans-serif
+$select-fontWeight ?= 700
+$select-borderWidth ?= 4px
+$select-borderColor ?= $select-color
+$select-borderRadius ?= .5em
+$select-arrowWidth ?= .75rem
+$select-arrowHeight ?= $select-arrowWidth
+$select-arrowSvg ?= url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSIwIDAgMTIgMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3R5bGU9ImZvbnQtc2l6ZTogMTJweDsiPjxwYXRoIGQ9Ik0xLjcwNSAyLjQ1MSBDIDEuMzA0IDIuNTU5LDAuNzY2IDMuMDMwLDAuNTUxIDMuNDYwIEMgMC40NjggMy42MjYsMC40NDUgMy42OTYsMC40MjEgMy44NzQgQyAwLjM4MSA0LjE1OSwwLjQ4NiA0LjQ5NywwLjcxMCA0LjgwMCBDIDAuODM3IDQuOTcxLDUuMDMyIDkuMTY1LDUuMjAwIDkuMjg5IEMgNS43MzggOS42ODUsNi4yNjIgOS42ODUsNi44MDAgOS4yODkgQyA2Ljk3MCA5LjE2NCwxMS4xNjQgNC45NzAsMTEuMjg5IDQuODAwIEMgMTEuNjE5IDQuMzUwLDExLjY3NCAzLjkwNSwxMS40NTMgMy40NjYgQyAxMS4yODAgMy4xMjMsMTAuODcxIDIuNzE0LDEwLjUyOCAyLjU0NCBDIDEwLjM1OCAyLjQ1OSwxMC4xOTIgMi40MjAsOS45OTYgMi40MjAgQyA5LjcxNSAyLjQyMCw5LjQ5MyAyLjUwMSw5LjIxMCAyLjcwNiBDIDkuMTI5IDIuNzY1LDguNDI1IDMuNDUxLDcuNTM1IDQuMzM4IEwgNi4wMDAgNS44NjggNC40NjUgNC4zMzggQyAzLjU3NSAzLjQ1MSwyLjg3MSAyLjc2NSwyLjc5MCAyLjcwNiBDIDIuNjE1IDIuNTc5LDIuNDQyIDIuNDkyLDIuMjg2IDIuNDUxIEMgMi4xMzcgMi40MTMsMS44NDggMi40MTMsMS43MDUgMi40NTEgIj48L3BhdGg+PC9zdmc+")
+$select-selected-bgColor ?= $select-bgColor
+$select-selected-color ?= $select-color
+$select-selected-borderColor ?= $select-selectedcolor
+
+
+$option-padding ?= .5em
+$option-bgColor ?= $select-color
+$option-hover-bgColor ?= dark($option-bgColor) ? lighten($option-bgColor, 10) : darken($option-bgColor, 10)
+$option-selected-bgColor ?= $option-hover-bgColor
+$option-fontSize ?= 0.8 * $select-fontSize
+$option-fontFamily ?= $select-fontFamily
+$option-fontWeight ?= 400
+$option-color ?= $select-bgColor
+$option-hover-color ?= $option-color
+$option-selected-color ?= $option-hover-color
+$option-borderWidth ?= 1px
+$option-borderColor ?= $option-hover-bgColor
+$select-selected-option-bgColor ?= $select-selected-color
+$select-selected-option-hover-bgColor ?= dark($select-selected-option-bgColor) ? lighten($select-selected-option-bgColor, 10) : darken($select-selected-option-bgColor, 10)
+$select-selected-option-color ?= $select-selected-bgColor
+$select-selected-option-hover-color ?= $select-selected-option-color
+$select-selected-option-borderColor ?= $select-selected-option-hover-bgColor
+
+$options-borderWidth ?= $select-borderWidth
+$options-borderColor ?= $option-bgColor
+$options-borderRadius ?= $select-borderRadius
+$options-floatingDistance ?= 1.5rem
+$options-boxShadowColor ?= $options-borderColor
+$options-boxShadow ?= 0px 0.5px 0.7px rgba($options-boxShadowColor, 0.031),
+  0px 0.9px 1.7px rgba($options-boxShadowColor, 0.027),
+  0px 1.3px 3.1px rgba($options-boxShadowColor, 0.019),
+  0px 2px 5.6px rgba($options-boxShadowColor, 0.016),
+  0px 3.2px 10.4px rgba($options-boxShadowColor, 0.024),
+  0px 5px 25px rgba($options-boxShadowColor, 0.07)
+$options-transitionDuration ?= .1s
+$options-transitionFunction ?= ease-in-out
+$select-selected-options-borderColor ?= $select-selected-option-bgColor
+$select-selected-options-boxShadowColor ?= $select-selected-options-borderColor
+$select-selected-options-boxShadow ?= 0px 0.5px 0.7px rgba($select-selected-options-boxShadowColor, 0.031),
+  0px 0.9px 1.7px rgba($select-selected-options-boxShadowColor, 0.027),
+  0px 1.3px 3.1px rgba($select-selected-options-boxShadowColor, 0.019),
+  0px 2px 5.6px rgba($select-selected-options-boxShadowColor, 0.016),
+  0px 3.2px 10.4px rgba($select-selected-options-boxShadowColor, 0.024),
+  0px 5px 25px rgba($select-selected-options-boxShadowColor, 0.07)

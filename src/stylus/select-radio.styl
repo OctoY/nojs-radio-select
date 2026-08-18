@@ -1,0 +1,152 @@
+@require ('./theme')
+
+$select
+  text-align center
+  padding var(--ors-select-padding)
+  background-color var(--ors-select-bg-color)
+  font-size var(--ors-select-font-size)
+  font-family var(--ors-select-font-family)
+  font-weight var(--ors-select-font-weight)
+  color var(--ors-select-color)
+  border var(--ors-select-border)
+  border-radius var(--ors-select-border-radius)
+  cursor pointer
+  overflow hidden
+  white-space nowrap
+  text-overflow ellipsis
+
+.radio-select
+  position relative
+  display flex
+  flex-direction column
+  width $select-width
+  line-height 1
+
+  &::after
+    content ""
+    -webkit-mask var(--ors-select-arrow-svg)
+    mask var(--ors-select-arrow-svg)
+    background-color var(--ors-select-color)
+    position absolute
+    top 50%
+    right var(--ors-select-arrow-right)
+    width var(--ors-select-arrow-width)
+    height var(--ors-select-arrow-height)
+    font-size var(--ors-select-arrow-height)
+    transform translateY(-50%)
+    z-index 1
+
+  &:has(:checked:not([value=""]):not([value="all"]))::after
+    background-color var(--ors-select-selected-color)
+
+  &:hover::after
+    transform translateY(-50%) rotate(180deg)
+
+  & *
+    box-sizing border-box
+
+  input
+    display none
+
+  .radio-select-placeholder
+    @extend $select
+    z-index 1
+
+  .radio-select-options-container
+    position absolute
+    top 0
+    left 0
+    right 0
+    padding-top var(--ors-options-container-padding-top)
+    height var(--ors-options-container-height)
+    overflow hidden
+    font-size var(--ors-select-font-size)
+
+    ^[0]:hover ^[1..-1]
+      overflow visible
+      opacity 1
+
+  .radio-select-options
+    display flex
+    flex-direction column
+    border var(--ors-options-border)
+    border-top-width var(--ors-options-border-top-width) !important
+    border-radius var(--ors-options-border-radius)
+    transition var(--ors-options-transition)
+    overflow hidden
+
+    ^[0]:hover ^[1..-1]
+      border var(--ors-options-hover-border)
+      box-shadow var(--ors-options-box-shadow)
+
+    ^[0]:has(:checked:not([value=""]):not([value="all"])) ^[1..-1]  
+      border var(--ors-select-selected-options-border)
+
+
+    ^[0]:has(:checked:not([value=""]):not([value="all"])):hover ^[1..-1]
+      border var(--ors-select-selected-options-hover-border)
+      box-shadow var(--ors-select-selected-options-box-shadow)
+
+  .radio-select-option
+    text-align center
+    padding var(--ors-option-padding)
+    background-color var(--ors-option-bg-color)
+    color var(--ors-option-color)
+    font-size var(--ors-option-font-size)
+    font-family var(--ors-option-font-family)
+    font-weight var(--ors-option-font-weight)
+    cursor pointer
+    border-block var(--ors-option-border-block)
+    transition var(--ors-options-transition)
+
+    ^[0]:hover ^[1..-1]
+      background-color var(--ors-select-hover-option-bg-color)
+      color var(--ors-select-hover-option-color)
+      border-block var(--ors-select-hover-option-border-block)
+
+    &:first-child
+      border-top-width var(--ors-option-first-child-border-top-width)
+
+    &:last-child
+      border-bottom none!important
+
+    &:hover
+      background-color var(--ors-option-hover-bg-color)
+      color var(--ors-option-hover-color)
+    
+    &:has(:checked:not([value=""]):not([value="all"]))::before     
+      @extend $select
+      content attr(title)
+      position absolute
+      top 0
+      left 0
+      right 0
+      z-index 1
+      background-color var(--ors-select-selected-bg-color)
+      color var(--ors-select-selected-color)
+      border-color var(--ors-select-selected-border-color)
+
+    ^[0]:has(:checked:not([value=""]):not([value="all"])) ^[1..-1]
+      background-color var(--ors-select-selected-option-bg-color)
+      color var(--ors-select-selected-option-color)
+      border-block var(--ors-select-selected-option-border)
+
+      &:has(:checked:not([value=""]):not([value="all"]))
+        background-color var(--ors-option-selected-bg-color)
+        color var(--ors-option-selected-color)
+ 
+      &:first-child
+        border-top-width var(--ors-select-selected-option-first-child-border-top-width) !important
+
+    ^[0]:has(:checked:not([value=""]):not([value="all"])):hover ^[1..-1]
+      background-color var(--ors-select-hover-select-selected-option-bg-color)
+      color var(--ors-select-hover-select-selected-option-color)
+      border-block var(--ors-select-hover-select-selected-option-border)
+
+      &:hover
+        background-color var(--ors-select-selected-option-hover-bg-color)
+        color var(--ors-select-selected-option-hover-color)
+
+      &:has(:checked:not([value=""]):not([value="all"]))
+        background-color var(--ors-select-hover-option-selected-bg-color)
+        color var(--ors-select-selected-option-selected-color)

@@ -1,0 +1,61 @@
+@require ('./_vars')
+
+.radio-select{$themeClass}
+  --ors-select-width $select-width
+  --ors-select-padding $select-paddingTop 'calc(%s + %s)' % ($select-paddingRight  $select-arrowWidth) $select-paddingBottom $select-paddingLeft
+  --ors-select-bg-color $select-bgColor
+  --ors-select-color $select-color
+  --ors-select-font-size $select-fontSize
+  --ors-select-font-family $select-fontFamily
+  --ors-select-font-weight $select-fontWeight
+  --ors-select-border $select-borderWidth solid $select-borderColor
+  --ors-select-border-radius $select-borderRadius
+  --ors-select-arrow-width $select-arrowWidth
+  --ors-select-arrow-height $select-arrowHeight
+  --ors-select-arrow-right (unit($select-paddingRight) == 'em')? 'calc(%s + %s)' % ((unit($select-paddingRight, '') * $select-fontSize) $select-borderWidth) : 'calc(%s + %s)' % ($select-paddingRight $select-borderWidth)
+  --ors-select-arrow-svg $select-arrowSvg
+  --ors-select-selected-bg-color $select-selected-bgColor
+  --ors-select-selected-color $select-selected-color
+  --ors-select-selected-border-color $select-selected-borderColor
+
+  --ors-option-padding $option-padding
+  --ors-option-bg-color rgba($option-bgColor, 0)
+  --ors-select-hover-option-bg-color rgba($option-bgColor, 1)
+  --ors-option-hover-bg-color $option-hover-bgColor
+  --ors-option-selected-bg-color rgba($option-selected-bgColor, 0)
+  --ors-select-hover-option-selected-bg-color rgba($option-selected-bgColor, 1)
+  --ors-option-font-size $option-fontSize
+  --ors-option-font-family $option-fontFamily
+  --ors-option-font-weight $option-fontWeight
+  --ors-option-color rgba($option-color, 0)
+  --ors-select-hover-option-color rgba($option-color, 1)
+  --ors-option-hover-color $option-hover-color
+  --ors-option-selected-color rgba($option-selected-color, 0)
+  --ors-select-selected-option-selected-color rgba($option-selected-color, 1)
+  --ors-option-border-block (($option-borderWidth == 1px)? $option-borderWidth : $option-borderWidth / 2) solid rgba($option-borderColor, 0)
+  --ors-select-hover-option-border-block (($option-borderWidth == 1px)? $option-borderWidth : $option-borderWidth / 2) solid rgba($option-borderColor, 1)
+  --ors-option-first-child-border-top-width ($select-bgColor == $select-borderColor && $select-bgColor == $option-bgColor && $options-floatingDistance == 0) ? $option-borderWidth : 0
+  --ors-select-selected-option-bg-color rgba($select-selected-option-bgColor, 0)
+  --ors-select-hover-select-selected-option-bg-color rgba($select-selected-option-bgColor, 1)
+  --ors-select-selected-option-hover-bg-color $select-selected-option-hover-bgColor
+  --ors-select-selected-option-color rgba($select-selected-option-color, 0)
+  --ors-select-hover-select-selected-option-color rgba($select-selected-option-color, 1)
+  --ors-select-selected-option-hover-color $select-selected-option-hover-color
+  --ors-select-selected-option-border (($option-borderWidth == 1px)? $option-borderWidth : $option-borderWidth / 2) solid rgba($select-selected-option-borderColor, 0)
+  --ors-select-hover-select-selected-option-border (($option-borderWidth == 1px)? $option-borderWidth : $option-borderWidth / 2) solid rgba($select-selected-option-borderColor, 1)
+  --ors-select-selected-option-first-child-border-top-width ($select-selected-bgColor == $select-selected-borderColor && $select-selected-bgColor == $select-selected-option-bgColor && $options-floatingDistance == 0) ? $option-borderWidth : 0
+  --ors-select-selected-option-bg-color rgba($select-selected-option-bgColor, 0)
+
+  --ors-options-border $options-borderWidth solid rgba($options-borderColor, 0)
+  --ors-options-border-top-width ($select-borderRadius == 0 && $options-floatingDistance == 0) ? 0 : $options-borderWidth
+  --ors-options-hover-border $options-borderWidth solid rgba($options-borderColor, 1)
+  --ors-options-border-radius $options-borderRadius
+  --ors-options-floating-disance $options-floatingDistance
+  --ors-options-box-shadow $options-boxShadow
+  --ors-options-transition all $options-transitionDuration $options-transitionFunction
+  --ors-select-selected-options-border $options-borderWidth solid rgba($select-selected-options-borderColor, 0)
+  --ors-select-selected-options-hover-border $options-borderWidth solid rgba($select-selected-options-borderColor, 1)
+  --ors-select-selected-options-box-shadow $select-selected-options-boxShadow
+
+  --ors-options-container-padding-top 'calc(%s + %s + %s + 2 * %s + %s)' % ((($select-fontSize==0)?0px:$select-fontSize) (($select-paddingTop==0)?0px:$select-paddingTop) (($select-paddingBottom==0)?0px:$select-paddingBottom) (($select-borderWidth==0)?0px:$select-borderWidth) (($options-floatingDistance==0)?0px:$options-floatingDistance)) 
+  --ors-options-container-height 'calc(%s + %s + %s + 2 * %s)' % ((($select-fontSize==0)?0px:$select-fontSize) (($select-paddingTop==0)?0px:$select-paddingTop) (($select-paddingBottom==0)?0px:$select-paddingBottom) (($select-borderWidth==0)?0px:$select-borderWidth))
